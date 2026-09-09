@@ -7,7 +7,7 @@ WITH funnel_stages AS (
     COUNT(DISTINCT CASE WHEN event_type = 'payment_info' THEN user_id END) AS stage_4_payment,
     COUNT(DISTINCT CASE WHEN event_type = 'purchase' THEN user_id END) AS stage_5_purchase
   FROM `user_events` 
-
+ 
 )
 
 SELECT 
