@@ -6,7 +6,7 @@ WITH funnel_stages AS (
     COUNT(DISTINCT CASE WHEN event_type = 'checkout_start' THEN user_id END) AS stage_3_checkout,
     COUNT(DISTINCT CASE WHEN event_type = 'payment_info' THEN user_id END) AS stage_4_payment,
     COUNT(DISTINCT CASE WHEN event_type = 'purchase' THEN user_id END) AS stage_5_purchase
-  FROM `portfolio-projects-814814.project.user_events` 
+  FROM `user_events` 
 
 )
 
