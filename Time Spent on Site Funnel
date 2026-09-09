@@ -1,0 +1,20 @@
+WITH user_time AS (
+
+  SELECT
+    user_id, 
+    MIN(CASE WHEN event_type = 'page_view' THEN event_date END) AS view_times,
+    MIN(CASE WHEN event_type = 'add_to_cart' THEN event_date END) AS cart_times,
+    MIN(CASE WHEN event_type = 'purchase' THEN event_date END) AS purchase_times,
+  FROM `portfolio-projects-814814.project.user_events` 
+
+  GROUP BY user_id
+  HAVING MIN(CASE WHEN event_type = 'purchase' THEN event_date END) IS NOT NULL
+)
+
+SELECT
+  COUNT(*) AS converted_users,
+  ROUND(AVG(TIMESTAMP_DIFF(cart_times, view_times, MINUTE)),2) AS avg_view_to_cart_minutes,
+  ROUND(AVG(TIMESTAMP_DIFF(purchase_times, cart_times, MINUTE)),2) AS avg_cart_to_purchase_minutes,
+  ROUND(AVG(TIMESTAMP_DIFF(purchase_times, view_times, MINUTE)),2) AS avg_total_minutes
+
+FROM user_time
