@@ -54,3 +54,10 @@ Finally, a look at revenue.
 <img width="890" height="51" alt="image" src="https://github.com/user-attachments/assets/d5db9b97-dcf3-4349-b86e-4c833310f7db" />
 
 Average orders appear to be $105-$110. The revenue per visitor starkly drops most likely due to the social media traffic. 
+
+--- 
+Conclusion and General Notes: 
+- There are limited issues when using the payment portal so do not focus on that.
+- Most of the views are generated via social media, however, these views have the least conversion to sales. The rate between views to purchase via social media has a large effect on decreasing the total view to sales conversion. 
+- The largest view to sale traffic is via email. Remain consistent with newsletters and implement more users on an email list. As email is the most sucessful channel for purchases, shift focus from social media to emails.
+
